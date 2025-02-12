@@ -1,0 +1,9 @@
+---
+import { Image } from "astro:assets";
+import type { Variant } from "../variants.ts";
+import { getAsset } from "../assets.ts";
+
+const variant: Variant = Astro.props.variant;
+---
+
+<Image src={getAsset(`logos/${variant.getId()}.png`)} alt={"IT für Alle Logo"}/>

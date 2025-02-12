@@ -1,4 +1,5 @@
 ---
+import Navbar from "../../components/Navbar.astro";
 import PlainLayout from "../../layouts/PlainLayout.astro";
 import type { Variant } from "../../variants.ts";
 
@@ -8,5 +9,6 @@ const variant: Variant = Astro.props.variant;
 ---
 
 <PlainLayout>
+  <Navbar variant={variant}/>
   <h1>Variant: {variant.getId()}</h1>
 </PlainLayout>
