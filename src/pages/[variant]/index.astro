@@ -1,0 +1,12 @@
+---
+import PlainLayout from "../../layouts/PlainLayout.astro";
+import type { Variant } from "../../variants.ts";
+
+export { getStaticPaths } from "../../variants.ts";
+
+const variant: Variant = Astro.props.variant;
+---
+
+<PlainLayout>
+  <h1>Variant: {variant.getId()}</h1>
+</PlainLayout>
