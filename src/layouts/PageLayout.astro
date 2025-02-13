@@ -12,5 +12,13 @@ const { variant } = Astro.props;
 
 <PlainLayout>
   <Navbar {variant}/>
-  <slot/>
+  <div class="content">
+    <slot/>
+  </div>
 </PlainLayout>
+
+<style>
+  .content {
+    margin: 1em 4em 0 4em;
+  }
+</style>

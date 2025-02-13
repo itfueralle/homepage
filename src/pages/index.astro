@@ -1,12 +1,11 @@
 ---
 import { Image } from "astro:assets";
-import { getAsset } from "../assets.ts";
 import PlainLayout from "../layouts/PlainLayout.astro";
 ---
 
 <PlainLayout>
   <div>
-    <Image src={getAsset("logos/default.png")} alt="IT für Alle Logo"/>
+    <Image src={import("/src/assets/logos/default.png")} alt="IT für Alle Logo"/>
     <a href="/taufkirchen/" class="taufkirchen">Taufkirchen</a>
     <a href="/moosburg/" class="moosburg">Moosburg</a>
   </div>

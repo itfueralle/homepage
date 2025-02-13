@@ -1,0 +1,28 @@
+{
+  "members": [
+    {
+      "name": "Michael",
+      "img": "michael.jpg"
+    },
+    {
+      "name": "Herwig",
+      "img": "herwig.jpg"
+    },
+    {
+      "name": "Felix",
+      "img": "felix.jpg"
+    },
+    {
+      "name": "Helena",
+      "img": "helena.jpg"
+    },
+    {
+      "name": "Filippo",
+      "img": "filippo.jpg"
+    },
+    {
+      "name": "David",
+      "img": "david.jpg"
+    }
+  ]
+}

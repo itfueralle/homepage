@@ -1,0 +1,42 @@
+---
+import { Image } from 'astro:assets';
+import type { Variant } from '../variants.ts';
+
+interface Props {
+  name: string,
+  src: Promise<{default: ImageMetadata}>,
+  variant: Variant
+}
+
+const { name, src, variant } = Astro.props;
+---
+
+<div class="card">
+  <Image {src} alt={name}/>
+  <span>{name}</span>
+</div>
+
+<style define:vars={{"primary-color": `var(--primary-color-${variant.getId()})`}}>
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 200px;
+    max-width: 100%;
+
+    padding: 8px;
+    gap: 8px;
+
+    border: 3px solid var(--primary-color);
+  
+    font-size: x-large;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    border: 3px solid var(--primary-color);
+    box-sizing: border-box;
+  }
+</style>
