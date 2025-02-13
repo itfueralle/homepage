@@ -10,6 +10,7 @@ const variant: Variant = Astro.props.variant;
 type Member = { name: string, img: string };
 const membersObj = await import(`/src/assets/members/${variant.getId()}.json`, {with: {type: "json"}});
 const members: Member[] = membersObj.members;
+members.sort((a, b) => a.name > b.name ? 1 : -1);
 ---
 
 <PageLayout {variant}>
