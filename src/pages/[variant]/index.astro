@@ -1,6 +1,5 @@
 ---
-import Navbar from "../../components/Navbar.astro";
-import PlainLayout from "../../layouts/PlainLayout.astro";
+import PageLayout from "../../layouts/PageLayout.astro";
 import type { Variant } from "../../variants.ts";
 
 export { getStaticPaths } from "../../variants.ts";
@@ -8,7 +7,6 @@ export { getStaticPaths } from "../../variants.ts";
 const variant: Variant = Astro.props.variant;
 ---
 
-<PlainLayout>
-  <Navbar variant={variant}/>
+<PageLayout {variant}>
   <h1>Variant: {variant.getId()}</h1>
-</PlainLayout>
+</PageLayout>

@@ -3,11 +3,15 @@ import { Image } from "astro:assets";
 import type { Variant } from "../variants.ts";
 import { getAsset } from "../assets.ts";
 
-const variant: Variant = Astro.props.variant;
+interface Props {
+  variant: Variant;
+}
+
+const { variant } = Astro.props;
 ---
 
 <div class="navbar">
-  <Image src={getAsset(`logos/${variant.getId()}.png`)} alt={"IT für Alle Logo"}/>
+  <Image src={getAsset(`logos/${variant.getId()}.png`)} alt={"IT für Alle Logo"} loading="eager"/>
   <div class="links">
     <a href={`/${variant.getId()}/`}>Startseite</a>
     <a href={`/${variant.getId()}/mitglieder`}>Mitglieder</a>
