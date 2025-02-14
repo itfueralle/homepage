@@ -1,6 +1,6 @@
 ---
 import { getAsset } from "../../assets.ts";
-import MemberCard from "../../components/MemberCard.astro";
+import EventCard from "../../components/EventCard.astro";
 import PageLayout from "../../layouts/PageLayout.astro";
 import type { Variant } from "../../variants.ts";
 
@@ -8,27 +8,22 @@ export { getStaticPaths } from "../../variants.ts";
 
 const variant: Variant = Astro.props.variant;
 
-type Member = { name: string, img: string };
-const membersObj = await getAsset(`members/${variant.getId()}.json`);
-const members: Member[] = membersObj.members;
-members.sort((a, b) => a.name > b.name ? 1 : -1);
+type Event = { title: string, location: string, date: string, time: string };
+const eventsObj = await getAsset(`events/${variant.getId()}.json`);
+const events: Event[] = eventsObj.events;
 ---
 
 <PageLayout {variant}>
   <div class="card-container">
-    {members.map(({ name, img }) => (
-      <MemberCard name={name} src={getAsset(`members/${img}`)} {variant}/>
-    ))}
+    {events.map(pEvent => <EventCard {...pEvent} {variant}/>)}
   </div>
 </PageLayout>
 
 <style>
   .card-container {
     display: flex;
+    gap: 8px;
     flex-wrap: wrap;
     justify-content: center;
-
-    margin: 0 16px;
-    gap: 16px;
   }
 </style>

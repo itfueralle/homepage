@@ -1,0 +1,34 @@
+{
+  "events": [
+    {
+      "title": "IT für Alle",
+      "location": "Mehrgenerationenhaus Taufkirchen (Vils)",
+      "date": "15.03.2025",
+      "time": "09:30 - 12:00"
+    },
+    {
+      "title": "IT für Alle",
+      "location": "Mehrgenerationenhaus Taufkirchen (Vils)",
+      "date": "17.05.2025",
+      "time": "09:30 - 12:00"
+    },
+    {
+      "title": "IT für Alle",
+      "location": "Mehrgenerationenhaus Taufkirchen (Vils)",
+      "date": "19.07.2025",
+      "time": "09:30 - 12:00"
+    },
+    {
+      "title": "IT für Alle",
+      "location": "Mehrgenerationenhaus Taufkirchen (Vils)",
+      "date": "20.09.2025",
+      "time": "09:30 - 12:00"
+    },
+    {
+      "title": "IT für Alle",
+      "location": "Mehrgenerationenhaus Taufkirchen (Vils)",
+      "date": "15.11.2025",
+      "time": "09:30 - 12:00"
+    }
+  ]
+}
