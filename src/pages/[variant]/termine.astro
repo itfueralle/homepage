@@ -2,20 +2,19 @@
 import { getAsset } from "../../assets.ts";
 import EventCard from "../../components/EventCard.astro";
 import PageLayout from "../../layouts/PageLayout.astro";
-import type { Variant } from "../../variants.ts";
 
 export { getStaticPaths } from "../../variants.ts";
 
-const variant: Variant = Astro.props.variant;
+const variant: string = Astro.props.variant;
 
 type Event = { title: string, location: string, date: string, time: string };
-const eventsObj = await getAsset(`events/${variant.getId()}.json`);
+const eventsObj = await getAsset(`events/${variant}.json`);
 const events: Event[] = eventsObj.events;
 ---
 
 <PageLayout {variant}>
   <div class="card-container">
-    {events.map(pEvent => <EventCard {...pEvent} {variant}/>)}
+    {events.map(pEvent => <EventCard {...pEvent}/>)}
   </div>
 </PageLayout>
 

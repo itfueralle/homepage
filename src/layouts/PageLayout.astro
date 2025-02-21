@@ -1,16 +1,15 @@
 ---
 import Navbar from "../components/Navbar.astro";
-import type { Variant } from "../variants.ts";
 import PlainLayout from "./PlainLayout.astro";
 
 interface Props {
-  variant: Variant;
+  variant: string;
 }
 
 const { variant } = Astro.props;
 ---
 
-<PlainLayout>
+<PlainLayout {variant}>
   <Navbar {variant}/>
   <div class="content">
     <slot/>

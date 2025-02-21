@@ -1,14 +1,12 @@
 ---
 import { Image } from 'astro:assets';
-import type { Variant } from '../variants.ts';
 
 interface Props {
   name: string,
-  src: Promise<{default: ImageMetadata}>,
-  variant: Variant
+  src: Promise<{default: ImageMetadata}>
 }
 
-const { name, src, variant } = Astro.props;
+const { name, src } = Astro.props;
 ---
 
 <div class="card">
@@ -16,7 +14,7 @@ const { name, src, variant } = Astro.props;
   <span>{name}</span>
 </div>
 
-<style define:vars={{"primary-color": `var(--primary-color-${variant.getId()})`}}>
+<style>
   .card {
     display: flex;
     flex-direction: column;

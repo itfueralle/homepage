@@ -1,12 +1,11 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
-import type { Variant } from "../../variants.ts";
 
 export { getStaticPaths } from "../../variants.ts";
 
-const variant: Variant = Astro.props.variant;
+const variant: string = Astro.props.variant;
 ---
 
 <PageLayout {variant}>
-  <h1>Variant: {variant.getId()}</h1>
+  <h1>Variant: {variant}</h1>
 </PageLayout>
